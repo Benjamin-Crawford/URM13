@@ -4,7 +4,7 @@ import numpy as np
 
 def bin_array(num, m):
     """Convert a positive integer num into an m-bit bit vector"""
-    return np.array(list(np.binary_repr(num).zfill(m))).astype(np.int8)
+    return np.array(list(np.binary_repr(num).zfill(m)))
 
 class urm13:
     def __init__(self, cur_address):
