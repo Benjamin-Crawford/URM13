@@ -29,7 +29,7 @@ class urm13:
     
     def set_default(self):
         """set all values other than i2c communication address to default as provided on wiki"""
-        values = [self.address,0x02,0x10,0xFF,0xFF,0xFF,0xFF,0x00,0x04,0x00,0x00,0x00] #defaults as provided on datasheet: https://wiki.dfrobot.com/URM13_Ultrasonic_Sensor_SKU_SEN0352 
+        values = [self.address,0x02,0x10,0xFF,0xFF,0xFF,0xFF,0x00,0x00, 0x04,0x00,0x00,0x00] #defaults as provided on datasheet: https://wiki.dfrobot.com/URM13_Ultrasonic_Sensor_SKU_SEN0352 
         offsets = range(0,13)
         self.set_mult_registers(offsets,values)
 
