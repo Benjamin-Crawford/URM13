@@ -137,8 +137,18 @@ class urm13:
         """0x00-0x0A corresponds to sensitivity level 0 to 10. Set the ranging sensitivity in large measuring range(40-900cm). The smaller the value, the higher the sensitivity."""
         return self.get_register(12,12)
 
+addresses = [0x12,0x13]
+sensors = []
+for address in addresses:
+    sensors.append(urm13(address))
 
+for sensor in sensors:
+    sensor.config_detect_mode(0)
 
+while(1):
+    for i in range(len(sensors)):
+        print("Sensor {}: {} cm".format(i,sensor.get_distance()))
+        time.sleep(0.1)
 
 
 
