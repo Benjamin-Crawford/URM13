@@ -142,14 +142,14 @@ sensors = []
 for address in addresses:
     sensors.append(urm13(address))
 
-for sensor in sensors:
-    sensor.config_detect_mode(0)
+# for sensor in sensors:
+#     sensor.config_detect_mode(0)
 
 while(1):
     for i in range(len(sensors)):
-        sensor.trigger_measurement()
+        sensors[i].trigger_measurement()
         time.sleep(0.1)
-        print("Sensor {}: {} cm".format(i,sensor.get_distance()))
+        print("Sensor {}: {} cm".format(i,sensors[i].get_distance()))
         time.sleep(0.1)
 
 
