@@ -4,7 +4,7 @@ import numpy as np
 
 def bin_array(num, m):
     """Convert a positive integer num into an m-bit bit vector"""
-    return np.array(list(np.binary_repr(num).zfill(m)))
+    return np.array(list(np.binary_repr(num).zfill(m))) #TODO: FIX THIS ITS BROKEN
 
 class urm13:
     def __init__(self, cur_address):
@@ -147,6 +147,8 @@ for sensor in sensors:
 
 while(1):
     for i in range(len(sensors)):
+        sensor.trigger_measurement()
+        time.sleep(0.1)
         print("Sensor {}: {} cm".format(i,sensor.get_distance()))
         time.sleep(0.1)
 
