@@ -14,7 +14,7 @@ class urm13:
         self.set_default()
     
     def set_register(self, offset, value):
-        self.bus.write_i2c_block_data(self.address, [value], offset)
+        self.bus.write_i2c_block_data(self.address, offset, [value])
     
     def get_register(self,start,end):
         block = self.bus.read_i2c_block_data(self.address,start,end-start+1)
